@@ -29,7 +29,6 @@ function(gcc_generate_hex TARGET HEX_FILE)
             COMMENT "Generating ${HEX_FILE}")
 endfunction()
 
-
 function(gcc_generate_bin TARGET BIN_FILE)
     add_custom_command(TARGET ${TARGET} POST_BUILD
             COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${TARGET}> ${BIN_FILE}
@@ -42,6 +41,9 @@ function(gcc_generate_lss TARGET LSS_FILE)
             COMMENT "Generating ${LSS_FILE}")
 endfunction()
 
+function(gcc_generate_map)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--cref -Wl,-Map=${CMAKE_BINARY_DIR}/${PROJECT_NAME}.map" PARENT_SCOPE)
+endfunction()
 
 
 
