@@ -1,11 +1,11 @@
 
 
 list (APPEND VENDOR_ATMEL_ASF_SRC_FILES
-        "src/ASF/sam0/drivers/extint/extint_sam_d_r/extint.c"
+        "src/ASF/${ATMEL_GENERAL_FAMILY}/drivers/extint/extint_sam_d_r/extint.c"
         )
 
 list (APPEND VENDOR_ATMEL_ASF_INCLUDES
-        "src/ASF/sam0/drivers/extint"
+        "src/ASF/${ATMEL_GENERAL_FAMILY}/drivers/extint"
         )
 
 if(DEFINED VENDOR_ATMEL_ASF_DRIVER_EXTINT_OPT_CALLBACK)
@@ -13,7 +13,7 @@ if(DEFINED VENDOR_ATMEL_ASF_DRIVER_EXTINT_OPT_CALLBACK)
         add_definitions(-DEXTINT_CALLBACK_MODE=true)
 
         list (APPEND VENDOR_ATMEL_ASF_SRC_FILES
-                "src/ASF/sam0/drivers/extint/extint_callback.c"
+                "src/ASF/${ATMEL_GENERAL_FAMILY}/drivers/extint/extint_callback.c"
                 )
     else()
         add_definitions(-DEXTINT_CALLBACK_MODE=false)

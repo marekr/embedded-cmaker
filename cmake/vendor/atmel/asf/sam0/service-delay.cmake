@@ -6,13 +6,13 @@ if(DEFINED VENDOR_ATMEL_ASF_SERVICE_DELAY_OPT_MODE)
         add_definitions(-DSYSTICK_MODE)
 
         list (APPEND VENDOR_ATMEL_ASF_SRC_FILES
-                "src/ASF/common2/services/delay/sam0/systick_counter.c"
+                "src/ASF/common2/services/delay/${ATMEL_GENERAL_FAMILY}/systick_counter.c"
                 )
     elseif(VENDOR_ATMEL_ASF_SERVICE_DELAY_OPT_MODE STREQUAL "CYCLE")
         add_definitions(-DCYCLE_MODE)
 
         list (APPEND VENDOR_ATMEL_ASF_SRC_FILES
-                "src/ASF/common2/services/delay/sam0/cycle_counter.c"
+                "src/ASF/common2/services/delay/${ATMEL_GENERAL_FAMILY}/cycle_counter.c"
                 )
     else()
         message(SEND_ERROR "VENDOR_ATMEL_ASF_SERVICE_DELAY_OPT_MODE CAN ONLY BE SYSTICK OR CYCLE")
