@@ -27,6 +27,9 @@ message("CPU Vendor: ${CPU_VENDOR}")
 message("CPU Family: ${CPU_FAMILY}")
 message("CPU Type: ${CPU_MTUNE}")
 
+set(VENDOR_SRC_FILES "")
+set(VENDOR_INCLUDES "")
+
 set(_INCLUDED_FILE 0)
 include(vendor/${CPU_VENDOR}/vendor OPTIONAL RESULT_VARIABLE _INCLUDED_FILE)
 
